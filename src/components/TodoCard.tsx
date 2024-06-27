@@ -1,16 +1,21 @@
-import React from "react";
+interface Props {
+  key: number;
+  todo: string;
+  deleteTodo: (todoKey: number) => void;
+  handleEdit: (todoKey: number, todo: string) => void;
+}
 
-const TodoCard = ({ todo, todoKey, deleteTodo, handleEdit }) => {
+const TodoCard = ({ todo, key, deleteTodo, handleEdit }: Props) => {
   const handleDeleteTodo = () => {
-    deleteTodo(todoKey);
+    deleteTodo(key);
   };
 
   const editClicked = () => {
-    handleEdit(todoKey, todo);
+    handleEdit(key, todo);
   };
 
   return (
-    <li className="todoItem" key={todoKey}>
+    <li className="todoItem" key={key}>
       {todo}
       <div>
         {/* Edit */}

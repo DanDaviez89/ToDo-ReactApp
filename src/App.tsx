@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 
@@ -26,7 +26,7 @@ const App = () => {
 
   // Edit a todo
   const handleEdit = (todoKey: number, todo: String) => {
-    setInputValue(todo);
+    setInputValue(String(todo));
     handleDeleteTodo(todoKey);
   };
 
@@ -46,7 +46,6 @@ const App = () => {
         addTodo={addTodo}
       />
       <TodoList
-        inputValue={inputValue}
         todos={todos}
         deleteTodo={handleDeleteTodo}
         handleEdit={handleEdit}

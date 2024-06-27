@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+interface Props {
+  inputValue: string;
+  setInputValue: (value: any) => void;
+  addTodo: (todo: string) => void;
+}
 
-const TodoInput = ({ addTodo, inputValue, setInputValue }) => {
-  const handleInputChange = (event) => {
+const TodoInput = ({ addTodo, inputValue, setInputValue }: Props) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 

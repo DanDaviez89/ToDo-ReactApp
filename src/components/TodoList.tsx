@@ -1,14 +1,18 @@
-import React from "react";
 import TodoCard from "./TodoCard";
 
-const TodoList = ({ todos, deleteTodo, handleEdit }) => {
+interface Props {
+  todos: string[];
+  deleteTodo: (todoKey: number) => void;
+  handleEdit: (todoKey: number, todo: string) => void;
+}
+
+const TodoList = ({ todos, deleteTodo, handleEdit }: Props) => {
   return (
     <ul>
       {todos.map((todo, todoKey) => (
         <TodoCard
           key={todoKey}
           todo={todo}
-          todoKey={todoKey}
           deleteTodo={deleteTodo}
           handleEdit={handleEdit}
         />

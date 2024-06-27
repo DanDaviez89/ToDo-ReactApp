@@ -1,3 +1,5 @@
+// src/components.d.ts
+
 declare module './components/TodoInput' {
   import { FunctionComponent } from 'react';
 
@@ -16,10 +18,24 @@ declare module './components/TodoList' {
 
   interface TodoListProps {
     todos: string[];
-    deleteTodo: (index: number) => void;
-    handleEdit: (index: number, todo: string) => void;
+    deleteTodo: (todoKey: number) => void;
+    handleEdit: (todoKey: number, todo: string) => void;
   }
 
   const TodoList: FunctionComponent<TodoListProps>;
   export default TodoList;
+}
+
+declare module './components/TodoCard' {
+  import { FunctionComponent } from 'react';
+
+  interface TodoCardProps {
+    todo: string;
+    todoKey: number;
+    deleteTodo: (todoKey: number) => void;
+    handleEdit: (todoKey: number, todo: string) => void;
+  }
+
+  const TodoCard: FunctionComponent<TodoCardProps>;
+  export default TodoCard;
 }
