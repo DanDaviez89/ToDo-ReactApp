@@ -3,10 +3,10 @@ import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+  const [todos, setTodos] = useState<string[]>([]);
+  const [inputValue, setInputValue] = useState<string>("");
 
-  const saveTodos = (newTodos: []) => {
+  const saveTodos = (newTodos: string[]) => {
     localStorage.setItem("todos", JSON.stringify(newTodos));
   };
 
