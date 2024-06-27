@@ -1,21 +1,21 @@
 interface Props {
-  key: number;
+  todoKeyLocal: number;
   todo: string;
   deleteTodo: (todoKey: number) => void;
   handleEdit: (todoKey: number, todo: string) => void;
 }
 
-const TodoCard = ({ todo, key, deleteTodo, handleEdit }: Props) => {
+const TodoCard = ({ todo, todoKeyLocal, deleteTodo, handleEdit }: Props) => {
   const handleDeleteTodo = () => {
-    deleteTodo(key);
+    deleteTodo(todoKeyLocal);
   };
 
   const editClicked = () => {
-    handleEdit(key, todo);
+    handleEdit(todoKeyLocal, todo);
   };
 
   return (
-    <li className="todoItem" key={key}>
+    <li className="todoItem" key={todoKeyLocal}>
       {todo}
       <div>
         {/* Edit */}

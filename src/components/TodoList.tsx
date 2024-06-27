@@ -12,6 +12,7 @@ const TodoList = ({ todos, deleteTodo, handleEdit }: Props) => {
       {todos.map((todo, todoKey) => (
         <TodoCard
           key={todoKey}
+          todoKeyLocal={todoKey}
           todo={todo}
           deleteTodo={deleteTodo}
           handleEdit={handleEdit}

@@ -31,7 +31,7 @@ declare module './components/TodoCard' {
 
   interface TodoCardProps {
     todo: string;
-    todoKey: number;
+    todoKeyLocal: number;
     deleteTodo: (todoKey: number) => void;
     handleEdit: (todoKey: number, todo: string) => void;
   }
